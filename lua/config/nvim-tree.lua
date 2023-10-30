@@ -13,6 +13,7 @@ local function my_on_attach(bufnr)
 
   -- custom mappings
   vim.keymap.set('n', 's',   api.node.open.vertical,              opts('Open: Vertical Split'))
+  vim.keymap.set('n', 'u',   api.tree.change_root_to_parent,      opts('Up'))
 end
 
 nvim_tree.setup {
