@@ -1,5 +1,3 @@
---- This module will load a random colorscheme on nvim startup process.
-
 local utils = require("utils")
 
 local M = {}
@@ -109,7 +107,8 @@ end
 
 --- Use a random colorscheme from the pre-defined list of colorschemes.
 M.rand_colorscheme = function()
-  local colorscheme = utils.rand_element(vim.tbl_keys(M.colorscheme2dir))
+  --local colorscheme = utils.rand_element(vim.tbl_keys(M.colorscheme2dir))
+  local colorscheme = "edge"
 
   if not vim.tbl_contains(vim.tbl_keys(M), colorscheme) then
     local msg = "Invalid colorscheme: " .. colorscheme

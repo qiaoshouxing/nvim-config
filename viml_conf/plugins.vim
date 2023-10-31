@@ -89,19 +89,26 @@ let g:Lf_WorkingDirectoryMode = 'a'
 nnoremap <silent> <leader>ff :<C-U>Leaderf file --popup<CR>
 
 " Grep project files in popup window
-nnoremap <silent> <leader>fg :<C-U>Leaderf rg --no-messages --popup<CR>
+"nnoremap <silent> <leader>fg :<C-U>Leaderf rg --no-messages --popup<CR>
+nnoremap <silent> <leader>fg :<C-U>Leaderf rg --no-messages --popup -e <cword><CR>
+"nnoremap <silent> <leader>fg :<C-U><C-R>=printf("Leaderf rg --no-messages -e %s", expand("<cword>"))<CR><CR>
 
 " Search vim help files
-nnoremap <silent> <leader>fh :<C-U>Leaderf help --popup<CR>
+"nnoremap <silent> <leader>fh :<C-U>Leaderf help --popup<CR>
 
 " Search tags in current buffer
-nnoremap <silent> <leader>ft :<C-U>Leaderf bufTag --popup<CR>
+" should use `Leaderf gtags --update` first
+let g:Lf_GtagsAutoGenerate = 0
+let g:Lf_Gtagslabel = 'native-pygments'
+nnoremap <silent> <leader>fr :<C-U><C-R>=printf("Leaderf gtags --popup --auto-jump -r %s", expand("<cword>"))<CR><CR>
+nnoremap <silent> <leader>fd :<C-U><C-R>=printf("Leaderf gtags --popup --auto-jump -d %s", expand("<cword>"))<CR><CR>
+nnoremap <silent> <C-]> :<C-U><C-R>=printf("Leaderf gtags --popup --auto-jump -d %s", expand("<cword>"))<CR><CR>
 
 " Switch buffers
-nnoremap <silent> <leader>fb :<C-U>Leaderf buffer --popup<CR>
+"nnoremap <silent> <leader>fb :<C-U>Leaderf buffer --popup<CR>
 
 " Search recent files
-nnoremap <silent> <leader>fr :<C-U>Leaderf mru --popup --absolute-path<CR>
+"nnoremap <silent> <leader>fr :<C-U>Leaderf mru --popup --absolute-path<CR>
 
 let g:Lf_PopupColorscheme = 'gruvbox_material'
 
