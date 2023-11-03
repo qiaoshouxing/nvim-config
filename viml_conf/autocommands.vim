@@ -75,7 +75,8 @@ augroup END
 
 " Quit Nvim if we have only one window, and its filetype match our pattern.
 function! s:quit_current_win() abort
-  let l:quit_filetypes = ['qf', 'vista', 'NvimTree']
+"  let l:quit_filetypes = ['qf', 'vista', 'NvimTree']
+  let l:quit_filetypes = ['qf', 'vista']
 
   let l:should_quit = v:true
 
