@@ -313,7 +313,7 @@ let g:matchup_override_vimtex = 1
 let g:matchup_delim_noskips = 0
 
 " Show offscreen match pair in popup window
-let g:matchup_matchparen_offscreen = {'method': 'popup'}
+let g:matchup_matchparen_offscreen = {}
 
 """""""""""""""""""""""""" asyncrun.vim settings """"""""""""""""""""""""""
 " Automatically open quickfix window of 6 line tall after asyncrun starts
