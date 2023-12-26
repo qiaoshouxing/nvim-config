@@ -21,70 +21,70 @@ end
 
 local plugin_specs = {
   -- auto-completion engine
-  {
-    "hrsh7th/nvim-cmp",
-    -- event = 'InsertEnter',
-    event = "VeryLazy",
-    dependencies = {
-      "hrsh7th/cmp-nvim-lsp",
-      "onsails/lspkind-nvim",
-      "hrsh7th/cmp-path",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-omni",
-      "hrsh7th/cmp-emoji",
-      "quangnguyen30192/cmp-nvim-ultisnips",
-    },
-    config = function()
-      require("config.nvim-cmp")
-    end,
-  },
+--  {
+--    "hrsh7th/nvim-cmp",
+--    -- event = 'InsertEnter',
+--    event = "VeryLazy",
+--    dependencies = {
+--      "hrsh7th/cmp-nvim-lsp",
+--      "onsails/lspkind-nvim",
+--      "hrsh7th/cmp-path",
+--      "hrsh7th/cmp-buffer",
+--      "hrsh7th/cmp-omni",
+--      "hrsh7th/cmp-emoji",
+--      "quangnguyen30192/cmp-nvim-ultisnips",
+--    },
+--    config = function()
+--      require("config.nvim-cmp")
+--    end,
+--  },
 
-  {
-    "neovim/nvim-lspconfig",
-    event = { "BufRead", "BufNewFile" },
-    config = function()
-      require("config.lsp")
-    end,
-  },
+--  {
+--    "neovim/nvim-lspconfig",
+--    event = { "BufRead", "BufNewFile" },
+--    config = function()
+--      require("config.lsp")
+--    end,
+--  },
 
-  {
-    "nvim-treesitter/nvim-treesitter",
-    enabled = function()
-      if vim.g.is_mac then
-        return true
-      end
-      return false
-    end,
-    event = "VeryLazy",
-    build = ":TSUpdate",
-    config = function()
-      require("config.treesitter")
-    end,
-  },
+--  {
+--    "nvim-treesitter/nvim-treesitter",
+--    enabled = function()
+--      if vim.g.is_mac then
+--        return true
+--      end
+--      return false
+--    end,
+--    event = "VeryLazy",
+--    build = ":TSUpdate",
+--    config = function()
+--      require("config.treesitter")
+--    end,
+--  },
 
-  -- Python indent (follows the PEP8 style)
-  { "Vimjas/vim-python-pep8-indent", ft = { "python" } },
+--  -- Python indent (follows the PEP8 style)
+--  { "Vimjas/vim-python-pep8-indent", ft = { "python" } },
 
-  -- Python-related text object
-  { "jeetsukumaran/vim-pythonsense", ft = { "python" } },
+--  -- Python-related text object
+--  { "jeetsukumaran/vim-pythonsense", ft = { "python" } },
 
   { "machakann/vim-swap", event = "VeryLazy" },
 
-  -- IDE for Lisp
-  -- 'kovisoft/slimv'
-  {
-    "vlime/vlime",
-    enabled = function()
-      if utils.executable("sbcl") then
-        return true
-      end
-      return false
-    end,
-    config = function(plugin)
-      vim.opt.rtp:append(plugin.dir .. "/vim")
-    end,
-    ft = { "lisp" },
-  },
+--  -- IDE for Lisp
+--  -- 'kovisoft/slimv'
+--  {
+--    "vlime/vlime",
+--    enabled = function()
+--      if utils.executable("sbcl") then
+--        return true
+--      end
+--      return false
+--    end,
+--    config = function(plugin)
+--      vim.opt.rtp:append(plugin.dir .. "/vim")
+--    end,
+--    ft = { "lisp" },
+--  },
 
   -- Super fast buffer jump
   {
@@ -95,15 +95,15 @@ local plugin_specs = {
     end,
   },
 
-  -- Show match number and index for searching
-  {
-    "kevinhwang91/nvim-hlslens",
-    branch = "main",
-    keys = { "*", "#", "n", "N" },
-    config = function()
-      require("config.hlslens")
-    end,
-  },
+--  -- Show match number and index for searching
+--  {
+--    "kevinhwang91/nvim-hlslens",
+--    branch = "main",
+--    keys = { "*", "#", "n", "N" },
+--    config = function()
+--      require("config.hlslens")
+--    end,
+--  },
   {
     "Yggdroot/LeaderF",
     cmd = "Leaderf",
@@ -125,18 +125,18 @@ local plugin_specs = {
   -- A list of colorscheme plugin you may want to try. Find what suits you.
   { "navarasu/onedark.nvim", lazy = true },
   { "sainnhe/edge", lazy = true },
-  { "sainnhe/sonokai", lazy = true },
-  { "sainnhe/gruvbox-material", lazy = true },
-  { "shaunsingh/nord.nvim", lazy = true },
-  { "sainnhe/everforest", lazy = true },
-  { "EdenEast/nightfox.nvim", lazy = true },
-  { "rebelot/kanagawa.nvim", lazy = true },
-  { "catppuccin/nvim", name = "catppuccin", lazy = true },
-  { "olimorris/onedarkpro.nvim", lazy = true },
-  { "tanvirtin/monokai.nvim", lazy = true },
-  { "marko-cerovac/material.nvim", lazy = true },
+--  { "sainnhe/sonokai", lazy = true },
+--  { "sainnhe/gruvbox-material", lazy = true },
+--  { "shaunsingh/nord.nvim", lazy = true },
+--  { "sainnhe/everforest", lazy = true },
+--  { "EdenEast/nightfox.nvim", lazy = true },
+--  { "rebelot/kanagawa.nvim", lazy = true },
+--  { "catppuccin/nvim", name = "catppuccin", lazy = true },
+--  { "olimorris/onedarkpro.nvim", lazy = true },
+--  { "tanvirtin/monokai.nvim", lazy = true },
+--  { "marko-cerovac/material.nvim", lazy = true },
 
-  { "nvim-tree/nvim-web-devicons", event = "VeryLazy" },
+--  { "nvim-tree/nvim-web-devicons", event = "VeryLazy" },
 
   {
     "nvim-lualine/lualine.nvim",
@@ -214,13 +214,13 @@ local plugin_specs = {
     cmd = "Vista",
   },
 
-  -- Snippet engine and snippet template
-  { "SirVer/ultisnips", dependencies = {
-    "honza/vim-snippets",
-  }, event = "InsertEnter" },
+--  -- Snippet engine and snippet template
+--  { "SirVer/ultisnips", dependencies = {
+--    "honza/vim-snippets",
+--  }, event = "InsertEnter" },
 
-  -- Automatic insertion and deletion of a pair of characters
-  { "Raimondi/delimitMate", event = "InsertEnter" },
+--  -- Automatic insertion and deletion of a pair of characters
+--  { "Raimondi/delimitMate", event = "InsertEnter" },
 
   -- Comment plugin
   { "tpope/vim-commentary", event = "VeryLazy" },
@@ -229,7 +229,7 @@ local plugin_specs = {
   -- 'mg979/vim-visual-multi'
 
   -- Autosave files on certain events
-  { "907th/vim-auto-save", event = "InsertEnter" },
+--  { "907th/vim-auto-save", event = "InsertEnter" },
 
   -- Show undo history visually
   { "simnalamburt/vim-mundo", cmd = { "MundoToggle", "MundoShow" } },
@@ -250,34 +250,34 @@ local plugin_specs = {
   { "tpope/vim-eunuch", cmd = { "Rename", "Delete" } },
 
   -- Repeat vim motions
-  { "tpope/vim-repeat", event = "VeryLazy" },
+--  { "tpope/vim-repeat", event = "VeryLazy" },
 
-  { "nvim-zh/better-escape.vim", event = { "InsertEnter" } },
+--  { "nvim-zh/better-escape.vim", event = { "InsertEnter" } },
 
-  {
-    "lyokha/vim-xkbswitch",
-    enabled = function()
-      if vim.g.is_mac and utils.executable("xkbswitch") then
-        return true
-      end
-      return false
-    end,
-    event = { "InsertEnter" },
-  },
+--  {
+--    "lyokha/vim-xkbswitch",
+--    enabled = function()
+--      if vim.g.is_mac and utils.executable("xkbswitch") then
+--        return true
+--      end
+--      return false
+--    end,
+--    event = { "InsertEnter" },
+--  },
 
-  {
-    "Neur1n/neuims",
-    enabled = function()
-      if vim.g.is_win then
-        return true
-      end
-      return false
-    end,
-    event = { "InsertEnter" },
-  },
+--  {
+--    "Neur1n/neuims",
+--    enabled = function()
+--      if vim.g.is_win then
+--        return true
+--      end
+--      return false
+--    end,
+--    event = { "InsertEnter" },
+--  },
 
-  -- Auto format tools
-  { "sbdchd/neoformat", cmd = { "Neoformat" } },
+--  -- Auto format tools
+--  { "sbdchd/neoformat", cmd = { "Neoformat" } },
 
   -- Git command inside vim
   {
@@ -314,148 +314,148 @@ local plugin_specs = {
     "sindrets/diffview.nvim"
   },
 
-  {
-    "kevinhwang91/nvim-bqf",
-    ft = "qf",
-    config = function()
-      require("config.bqf")
-    end,
-  },
+--  {
+--    "kevinhwang91/nvim-bqf",
+--    ft = "qf",
+--    config = function()
+--      require("config.bqf")
+--    end,
+--  },
 
-  -- Another markdown plugin
-  { "preservim/vim-markdown", ft = { "markdown" } },
+--  -- Another markdown plugin
+--  { "preservim/vim-markdown", ft = { "markdown" } },
 
-  -- Faster footnote generation
-  { "vim-pandoc/vim-markdownfootnotes", ft = { "markdown" } },
+--  -- Faster footnote generation
+--  { "vim-pandoc/vim-markdownfootnotes", ft = { "markdown" } },
 
-  -- Vim tabular plugin for manipulate tabular, required by markdown plugins
-  { "godlygeek/tabular", cmd = { "Tabularize" } },
+--  -- Vim tabular plugin for manipulate tabular, required by markdown plugins
+--  { "godlygeek/tabular", cmd = { "Tabularize" } },
 
-  -- Markdown previewing (only for Mac and Windows)
-  {
-    "iamcco/markdown-preview.nvim",
-    enabled = function()
-      if vim.g.is_win or vim.g.is_mac then
-        return true
-      end
-      return false
-    end,
-    build = "cd app && npm install",
-    ft = { "markdown" },
-  },
+--  -- Markdown previewing (only for Mac and Windows)
+--  {
+--    "iamcco/markdown-preview.nvim",
+--    enabled = function()
+--      if vim.g.is_win or vim.g.is_mac then
+--        return true
+--      end
+--      return false
+--    end,
+--    build = "cd app && npm install",
+--    ft = { "markdown" },
+--  },
 
-  {
-    "folke/zen-mode.nvim",
-    cmd = "ZenMode",
-    config = function()
-      require("config.zen-mode")
-    end,
-  },
+--  {
+--    "folke/zen-mode.nvim",
+--    cmd = "ZenMode",
+--    config = function()
+--      require("config.zen-mode")
+--    end,
+--  },
 
-  {
-    "rhysd/vim-grammarous",
-    enabled = function()
-      if vim.g.is_mac then
-        return true
-      end
-      return false
-    end,
-    ft = { "markdown" },
-  },
+--  {
+--    "rhysd/vim-grammarous",
+--    enabled = function()
+--      if vim.g.is_mac then
+--        return true
+--      end
+--      return false
+--    end,
+--    ft = { "markdown" },
+--  },
 
-  { "chrisbra/unicode.vim", event = "VeryLazy" },
+--  { "chrisbra/unicode.vim", event = "VeryLazy" },
 
-  -- Additional powerful text object for vim, this plugin should be studied
-  -- carefully to use its full power
-  { "wellle/targets.vim", event = "VeryLazy" },
+--  -- carefully to use its full power
+--  -- Additional powerful text object for vim, this plugin should be studied
+--  { "wellle/targets.vim", event = "VeryLazy" },
 
-  -- Plugin to manipulate character pairs quickly
-  { "machakann/vim-sandwich", event = "VeryLazy" },
+--  -- Plugin to manipulate character pairs quickly
+--  { "machakann/vim-sandwich", event = "VeryLazy" },
 
-  -- Add indent object for vim (useful for languages like Python)
-  { "michaeljsmith/vim-indent-object", event = "VeryLazy" },
+--  -- Add indent object for vim (useful for languages like Python)
+--  { "michaeljsmith/vim-indent-object", event = "VeryLazy" },
 
-  -- Only use these plugin on Windows and Mac and when LaTeX is installed
-  {
-    "lervag/vimtex",
-    enabled = function()
-      if utils.executable("latex") then
-        return true
-      end
-      return false
-    end,
-    ft = { "tex" },
-  },
+--  -- Only use these plugin on Windows and Mac and when LaTeX is installed
+--  {
+--    "lervag/vimtex",
+--    enabled = function()
+--      if utils.executable("latex") then
+--        return true
+--      end
+--      return false
+--    end,
+--    ft = { "tex" },
+--  },
 
-  -- Since tmux is only available on Linux and Mac, we only enable these plugins
-  -- for Linux and Mac
-  -- .tmux.conf syntax highlighting and setting check
-  {
-    "tmux-plugins/vim-tmux",
-    enabled = function()
-      if utils.executable("tmux") then
-        return true
-      end
-      return false
-    end,
-    ft = { "tmux" },
-  },
+--  -- Since tmux is only available on Linux and Mac, we only enable these plugins
+--  -- for Linux and Mac
+--  -- .tmux.conf syntax highlighting and setting check
+--  {
+--    "tmux-plugins/vim-tmux",
+--    enabled = function()
+--      if utils.executable("tmux") then
+--        return true
+--      end
+--      return false
+--    end,
+--    ft = { "tmux" },
+--  },
 
-  -- Modern matchit implementation
-  { "andymass/vim-matchup", event = "BufRead" },
-  { "tpope/vim-scriptease", cmd = { "Scriptnames", "Message", "Verbose" } },
+--  -- Modern matchit implementation
+--  { "andymass/vim-matchup", event = "BufRead" },
+--  { "tpope/vim-scriptease", cmd = { "Scriptnames", "Message", "Verbose" } },
 
-  -- Asynchronous command execution
-  { "skywind3000/asyncrun.vim", lazy = true, cmd = { "AsyncRun" } },
-  { "cespare/vim-toml", ft = { "toml" }, branch = "main" },
+--  -- Asynchronous command execution
+--  { "skywind3000/asyncrun.vim", lazy = true, cmd = { "AsyncRun" } },
+--  { "cespare/vim-toml", ft = { "toml" }, branch = "main" },
 
-  -- Edit text area in browser using nvim
-  {
-    "glacambre/firenvim",
-    enabled = function()
-      if vim.g.is_win or vim.g.is_mac then
-        return true
-      end
-      return false
-    end,
-    build = function()
-      vim.fn["firenvim#install"](0)
-    end,
-    lazy = true,
-  },
+--  -- Edit text area in browser using nvim
+--  {
+--    "glacambre/firenvim",
+--    enabled = function()
+--      if vim.g.is_win or vim.g.is_mac then
+--        return true
+--      end
+--      return false
+--    end,
+--    build = function()
+--      vim.fn["firenvim#install"](0)
+--    end,
+--    lazy = true,
+--  },
 
-  -- Debugger plugin
-  {
-    "sakhnik/nvim-gdb",
-    enabled = function()
-      if vim.g.is_win or vim.g.is_linux then
-        return true
-      end
-      return false
-    end,
-    build = { "bash install.sh" },
-    lazy = true,
-  },
+--  -- Debugger plugin
+--  {
+--    "sakhnik/nvim-gdb",
+--    enabled = function()
+--      if vim.g.is_win or vim.g.is_linux then
+--        return true
+--      end
+--      return false
+--    end,
+--    build = { "bash install.sh" },
+--    lazy = true,
+--  },
 
-  -- Session management plugin
-  { "tpope/vim-obsession", cmd = "Obsession" },
+--  -- Session management plugin
+--  { "tpope/vim-obsession", cmd = "Obsession" },
 
-  {
-    "ojroques/vim-oscyank",
-    enabled = function()
-      if vim.g.is_linux then
-        return true
-      end
-      return false
-    end,
-    cmd = { "OSCYank", "OSCYankReg" },
-  },
+--  {
+--    "ojroques/vim-oscyank",
+--    enabled = function()
+--      if vim.g.is_linux then
+--        return true
+--      end
+--      return false
+--    end,
+--    cmd = { "OSCYank", "OSCYankReg" },
+--  },
 
   -- The missing auto-completion for cmdline!
-  {
-    "gelguy/wilder.nvim",
-    build = ":UpdateRemotePlugins",
-  },
+--  {
+--    "gelguy/wilder.nvim",
+--    build = ":UpdateRemotePlugins",
+--  },
 
   -- showing keybindings
   {
@@ -479,15 +479,15 @@ local plugin_specs = {
     end,
   },
 
-  { "ii14/emmylua-nvim", ft = "lua" },
-  {
-    "j-hui/fidget.nvim",
-    event = "VeryLazy",
-    tag = "legacy",
-    config = function()
-      require("config.fidget-nvim")
-    end,
-  },
+--  { "ii14/emmylua-nvim", ft = "lua" },
+--  {
+--    "j-hui/fidget.nvim",
+--    event = "VeryLazy",
+--    tag = "legacy",
+--    config = function()
+--      require("config.fidget-nvim")
+--    end,
+--  },
 }
 
 -- configuration for lazy itself.
