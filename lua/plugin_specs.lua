@@ -113,6 +113,7 @@ local plugin_specs = {
       end
     end,
   },
+
   "nvim-lua/plenary.nvim",
   {
     "nvim-telescope/telescope.nvim",
@@ -451,11 +452,11 @@ local plugin_specs = {
 --    cmd = { "OSCYank", "OSCYankReg" },
 --  },
 
-  -- The missing auto-completion for cmdline!
---  {
---    "gelguy/wilder.nvim",
---    build = ":UpdateRemotePlugins",
---  },
+-- The missing auto-completion for cmdline!
+  {
+    "gelguy/wilder.nvim",
+    build = ":UpdateRemotePlugins",
+  },
 
   -- showing keybindings
   {
