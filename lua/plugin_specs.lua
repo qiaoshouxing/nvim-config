@@ -20,47 +20,47 @@ local firenvim_not_active = function()
 end
 
 local plugin_specs = {
-  -- auto-completion engine
---  {
---    "hrsh7th/nvim-cmp",
---    -- event = 'InsertEnter',
---    event = "VeryLazy",
---    dependencies = {
---      "hrsh7th/cmp-nvim-lsp",
---      "onsails/lspkind-nvim",
---      "hrsh7th/cmp-path",
---      "hrsh7th/cmp-buffer",
---      "hrsh7th/cmp-omni",
---      "hrsh7th/cmp-emoji",
---      "quangnguyen30192/cmp-nvim-ultisnips",
---    },
---    config = function()
---      require("config.nvim-cmp")
---    end,
---  },
+-- auto-completion engine
+  {
+    "hrsh7th/nvim-cmp",
+    -- event = 'InsertEnter',
+    event = "VeryLazy",
+    dependencies = {
+      "hrsh7th/cmp-nvim-lsp",
+      "onsails/lspkind-nvim",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-omni",
+      "hrsh7th/cmp-emoji",
+      "quangnguyen30192/cmp-nvim-ultisnips",
+    },
+    config = function()
+      require("config.nvim-cmp")
+    end,
+  },
 
---  {
---    "neovim/nvim-lspconfig",
---    event = { "BufRead", "BufNewFile" },
---    config = function()
---      require("config.lsp")
---    end,
---  },
+  {
+    "neovim/nvim-lspconfig",
+    event = { "BufRead", "BufNewFile" },
+    config = function()
+      require("config.lsp")
+    end,
+  },
 
---  {
---    "nvim-treesitter/nvim-treesitter",
---    enabled = function()
---      if vim.g.is_mac then
---        return true
---      end
---      return false
---    end,
---    event = "VeryLazy",
---    build = ":TSUpdate",
---    config = function()
---      require("config.treesitter")
---    end,
---  },
+{
+  "nvim-treesitter/nvim-treesitter",
+  enabled = function()
+    if vim.g.is_mac then
+      return true
+    end
+    return false
+  end,
+  event = "VeryLazy",
+  build = ":TSUpdate",
+  config = function()
+    require("config.treesitter")
+  end,
+},
 
 --  -- Python indent (follows the PEP8 style)
 --  { "Vimjas/vim-python-pep8-indent", ft = { "python" } },
@@ -215,10 +215,10 @@ local plugin_specs = {
     cmd = "Vista",
   },
 
---  -- Snippet engine and snippet template
---  { "SirVer/ultisnips", dependencies = {
---    "honza/vim-snippets",
---  }, event = "InsertEnter" },
+-- Snippet engine and snippet template
+{ "SirVer/ultisnips", dependencies = {
+  "honza/vim-snippets",
+}, event = "InsertEnter" },
 
 --  -- Automatic insertion and deletion of a pair of characters
 --  { "Raimondi/delimitMate", event = "InsertEnter" },
