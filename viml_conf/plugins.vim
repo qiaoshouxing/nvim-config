@@ -366,7 +366,7 @@ endif
 nnoremap <leader>dp :<C-U>GdbStartPDB python -m pdb %<CR>
 
 """"""""""""""""""""""""""""""wilder.nvim settings""""""""""""""""""""""""""""""
-"call timer_start(250, { -> s:wilder_init() })
+call timer_start(2, { -> s:wilder_init() })
 
 function! s:wilder_init() abort
   try

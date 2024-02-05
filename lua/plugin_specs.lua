@@ -47,28 +47,28 @@ local plugin_specs = {
     end,
   },
 
-{
-  "nvim-treesitter/nvim-treesitter",
-  enabled = function()
-    if vim.g.is_mac then
-      return true
-    end
-    return false
-  end,
-  event = "VeryLazy",
-  build = ":TSUpdate",
-  config = function()
-    require("config.treesitter")
-  end,
-},
+  {
+    "nvim-treesitter/nvim-treesitter",
+    enabled = function()
+      if vim.g.is_mac then
+        return true
+      end
+      return false
+    end,
+    event = "VeryLazy",
+    build = ":TSUpdate",
+    config = function()
+      require("config.treesitter")
+    end,
+  },
 
---  -- Python indent (follows the PEP8 style)
---  { "Vimjas/vim-python-pep8-indent", ft = { "python" } },
+-- Python indent (follows the PEP8 style)
+{ "Vimjas/vim-python-pep8-indent", ft = { "python" } },
 
---  -- Python-related text object
---  { "jeetsukumaran/vim-pythonsense", ft = { "python" } },
+-- Python-related text object
+{ "jeetsukumaran/vim-pythonsense", ft = { "python" } },
 
-  { "machakann/vim-swap", event = "VeryLazy" },
+{ "machakann/vim-swap", event = "VeryLazy" },
 
 --  -- IDE for Lisp
 --  -- 'kovisoft/slimv'
@@ -456,6 +456,11 @@ local plugin_specs = {
   {
     "gelguy/wilder.nvim",
     build = ":UpdateRemotePlugins",
+  },
+
+  {
+    "test",
+    build = ":UpdateRemotePlugins"
   },
 
   -- showing keybindings
