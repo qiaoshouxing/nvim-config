@@ -9,20 +9,17 @@
     <a>
       <img alt="Windows" src="https://img.shields.io/badge/Windows-%23.svg?style=flat-square&logo=windows&color=0078D6&logoColor=white" />
     </a>
+    <a href="https://github.com/neovim/neovim/releases/tag/stable">
+      <img src="https://img.shields.io/badge/Neovim-0.11.0-blueviolet.svg?style=flat-square&logo=Neovim&logoColor=green" alt="Neovim minimum version"/>
+    </a>
     <a href="https://github.com/jdhao/nvim-config/releases/latest">
       <img alt="Latest release" src="https://img.shields.io/github/v/release/jdhao/nvim-config" />
-    </a>
-    <a href="https://github.com/neovim/neovim/releases/tag/stable">
-      <img src="https://img.shields.io/badge/Neovim-0.9.2-blueviolet.svg?style=flat-square&logo=Neovim&logoColor=green" alt="Neovim minimum version"/>
     </a>
     <a href="https://github.com/jdhao/nvim-config/search?l=vim-script">
       <img src="https://img.shields.io/github/languages/top/jdhao/nvim-config" alt="Top languages"/>
     </a>
     <a href="https://github.com/jdhao/nvim-config/graphs/commit-activity">
       <img src="https://img.shields.io/github/commit-activity/m/jdhao/nvim-config?style=flat-square" />
-    </a>
-    <a href="https://github.com/jdhao/nvim-config/releases/tag/v0.9.2">
-      <img src="https://img.shields.io/github/commits-since/jdhao/nvim-config/v0.9.2?style=flat-square" />
     </a>
     <a href="https://github.com/jdhao/nvim-config/graphs/contributors">
       <img src="https://img.shields.io/github/contributors/jdhao/nvim-config?style=flat-square" />
@@ -62,9 +59,9 @@ and how to set up on different platforms (Linux, macOS, and Windows).
 + Language server protocol (LSP) support via [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig).
 + Git integration via [vim-fugitive](https://github.com/tpope/vim-fugitive).
 + Better escaping from insert mode via [better-escape.vim](https://github.com/nvim-zh/better-escape.vim).
-+ Ultra-fast project-wide fuzzy searching via [LeaderF](https://github.com/Yggdroot/LeaderF).
++ Ultra-fast project-wide fuzzy searching via [fzf-lua](https://github.com/ibhagwan/fzf-lua).
 + Faster code commenting via [vim-commentary](https://github.com/tpope/vim-commentary).
-+ Faster matching pair insertion and jump via [delimitMate](https://github.com/Raimondi/delimitMate).
++ Faster matching pair insertion and jump via [nvim-autopairs](https://github.com/windwp/nvim-autopairs).
 + Smarter and faster matching pair management (add, replace or delete) via [vim-sandwich](https://github.com/machakann/vim-sandwich).
 + Fast buffer jump via [hop.nvim](https://github.com/phaazon/hop.nvim).
 + Powerful snippet insertion via [Ultisnips](https://github.com/SirVer/ultisnips).
@@ -82,8 +79,8 @@ and how to set up on different platforms (Linux, macOS, and Windows).
 + LaTeX editing and previewing via [vimtex](https://github.com/lervag/vimtex)
 + Animated GUI style notification via [nvim-notify](https://github.com/rcarriga/nvim-notify).
 + Tags navigation via [vista](https://github.com/liuchengxu/vista.vim).
-+ Code formatting via [Neoformat](https://github.com/sbdchd/neoformat).
 + Undo management via [vim-mundo](https://github.com/simnalamburt/vim-mundo)
++ Code folding with [nvim-ufo](https://github.com/kevinhwang91/nvim-ufo) and [statuscol.nvim](https://github.com/luukvbaal/statuscol.nvim)
 + ......
 
 # UI Demo
@@ -96,10 +93,10 @@ For more UI demos, check [here](https://github.com/jdhao/nvim-config/issues/15).
 <img src="https://user-images.githubusercontent.com/16662357/183256752-fb23b215-a6b8-4646-beed-9999f52d53f1.png" width="800">
 </p>
 
-## File fuzzy finding using LeaderF
+## File fuzzy finding using fzf-lua
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/16662357/183257017-2d9d7605-3c4b-4e1d-8955-30998f9b6f28.gif" width="800">
+<img src="https://github.com/user-attachments/assets/3199e35d-121a-487b-bfd1-58eb69b0b48a" width="800">
 </p>
 
 ## Code autocompletion with nvim-cmp
@@ -140,6 +137,12 @@ Go to a string starting with `se`
 <img src="https://user-images.githubusercontent.com/16662357/128589873-aadb8264-1098-4834-9876-fa66a309be05.gif" width="800">
 </p>
 
+## code folding with nvim-ufo and statuscol.nvim
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/a01a56b2-7c91-43de-b305-f2fbaa81dcec" width="800">
+</p>
+
 # Shortcuts
 
 Some of the shortcuts I use frequently are listed here. In the following shortcuts, `<leader>` represents ASCII character `,`.
@@ -165,12 +168,14 @@ Some of the shortcuts I use frequently are listed here. In the following shortcu
 | `<space>t`        | Normal        | Linux/macOS/Win | Toggle tag window (show project tags in the right window)                |
 | `<leader>gs`      | Normal        | Linux/macOS/Win | Show Git status result                                                   |
 | `<leader>gw`      | Normal        | Linux/macOS/Win | Run Git add for current file                                             |
-| `<leader>gd`      | Normal        | Linux/macOS/Win | Run git diff for current file                                            |
 | `<leader>gc`      | Normal        | Linux/macOS/Win | Run git commit                                                           |
 | `<leader>gpl`     | Normal        | Linux/macOS/Win | Run git pull                                                             |
 | `<leader>gpu`     | Normal        | Linux/macOS/Win | Run git push                                                             |
-| `<leader>gl`      | Normal/Visual | Linux/macOS/Win | Get perm link for current/visually-select lines
-| `<leader>gb`      | Normal        | macOS           | Browse current git repo in browser
+| `<leader>gbd`     | Normal        | Linux/macOS/Win | Delete a branch                                                          |
+| `<leader>gbn`     | Normal        | Linux/macOS/Win | Create a new branch                                                      |
+| `<leader>gl`      | Normal/Visual | Linux/macOS/Win | Get perm link for current/visually-select lines                          |
+| `<leader>gbr`     | Normal        | macOS           | Browse current git repo in browser                                       |
+| `<leader>gb`      | Visual        | macOS           | Blame current line                                                       |
 | `<F9>`            | Normal        | Linux/macOS/Win | Compile&run current source file (for C++, LaTeX, Lua, Python)            |
 | `<F11>`           | Normal        | Linux/macOS/Win | Toggle spell checking                                                    |
 | `<F12>`           | Normal        | Linux/macOS/Win | Toggle paste mode                                                        |
@@ -182,7 +187,6 @@ Some of the shortcuts I use frequently are listed here. In the following shortcu
 | `Alt-j`           | Normal        | Linux/macOS/Win | Move current line or selected lines down                                 |
 | `Alt-m`           | Normal        | macOS/Win       | Markdown previewing in system browser                                    |
 | `Alt-Shift-m`     | Normal        | macOS/Win       | Stopping Markdown previewing in system browser                           |
-| `ob`              | Normal/Visual | macOS/Win       | Open link under cursor or search visual selection                        |
 | `ctrl-u`          | Insert        | Linux/macOS/Win | Turn word under cursor to upper case                                     |
 | `ctrl-t`          | Insert        | Linux/macOS/Win | Turn word under cursor to title case                                     |
 | `jk`              | Insert        | Linux/macOS/Win | Return to Normal mode without lagging                                    |
@@ -191,11 +195,13 @@ Some of the shortcuts I use frequently are listed here. In the following shortcu
 
 In addition to commands provided by various plugins, I have also created some custom commands for personal use.
 
-| command    | description                                                             | example                        |
-|------------|-------------------------------------------------------------------------|--------------------------------|
-| `Redir`    | capture command output to a tabpage for easier inspection.              | `Redir hi`                     |
-| `Edit`     | edit multiple files at the same time, supports globing                  | `Edit *.vim`                   |
-| `Datetime` | print current date and time or convert Unix time stamp to date and time | `Datetime 12345` or `Datetime` |
+| command      | description                                                             | example                        |
+|--------------|-------------------------------------------------------------------------|--------------------------------|
+| `Redir`      | capture command output to a tabpage for easier inspection.              | `Redir hi`                     |
+| `Edit`       | edit multiple files at the same time, supports globing                  | `Edit *.vim`                   |
+| `Datetime`   | print current date and time or convert Unix time stamp to date and time | `Datetime 12345` or `Datetime` |
+| `JSONFormat` | format a JSON file                                                      | `JSONFormat`                   |
+| `CopyPath`   | copy current file path to clipboard                                     | `CopyPath relative`            |
 
 # Contributing
 
