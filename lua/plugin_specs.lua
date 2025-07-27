@@ -36,6 +36,7 @@ local plugin_specs = {
       require("config.nvim-cmp")
     end,
   },
+
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -197,10 +198,14 @@ local plugin_specs = {
 --    cmd = "Vista",
 --  },
 --
----- Snippet engine and snippet template
---{ "SirVer/ultisnips", dependencies = {
---  "honza/vim-snippets",
---}, event = "InsertEnter" },
+  -- Snippet engine and snippet template
+  {
+    "SirVer/ultisnips",
+    dependencies = {
+      "honza/vim-snippets",
+    },
+    event = "InsertEnter",
+  },
 --
 --  -- Comment plugin
 --  { "tpope/vim-commentary", event = "VeryLazy" },

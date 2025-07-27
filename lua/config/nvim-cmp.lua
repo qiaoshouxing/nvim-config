@@ -6,8 +6,8 @@ require("cmp_nvim_lsp")
 require("cmp_path")
 require("cmp_buffer")
 require("cmp_omni")
-require("cmp_nvim_ultisnips")
 require("cmp_cmdline")
+require("cmp_nvim_ultisnips")
 
 local MiniIcons = require("mini.icons")
 
