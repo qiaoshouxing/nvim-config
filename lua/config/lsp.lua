@@ -121,9 +121,14 @@ vim.lsp.config("*", {
 local enabled_lsp_servers = {
   lua_ls = "lua-language-server",
   -- ltex = "ltex-ls",
+  pyright = "pyright",
   clangd = "clangd",
   vimls = "vim-language-server",
   bashls = "bash-language-server",
+  html = "vscode-html-language-server",
+  cssls = "vscode-css-language-server",
+  eslint = "vscode-eslint-language-server",
+  yamlls = "yaml-language-server"
 }
 
 for server_name, lsp_executable in pairs(enabled_lsp_servers) do
