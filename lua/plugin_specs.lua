@@ -84,14 +84,14 @@ local plugin_specs = {
 --      "nvim-telescope/telescope-symbols.nvim",
 --    },
 --  },
---  {
---    "ibhagwan/fzf-lua",
---    -- optional for icon support
---    dependencies = { "nvim-tree/nvim-web-devicons" },
---    config = function()
---      require("config.fzf-lua")
---    end,
---  },
+  {
+    "ibhagwan/fzf-lua",
+    -- optional for icon support
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("config.fzf-lua")
+    end,
+  },
 --  {
 --    "MeanderingProgrammer/markdown.nvim",
 --    main = "render-markdown",
@@ -228,14 +228,14 @@ local plugin_specs = {
 --  -- Handy unix command inside Vim (Rename, Move etc.)
 --  { "tpope/vim-eunuch", cmd = { "Rename", "Delete" } },
 --
---  -- Git command inside vim
---  {
---    "tpope/vim-fugitive",
---    event = "User InGitRepo",
---    config = function()
---      require("config.fugitive")
---    end,
---  },
+  -- Git command inside vim
+  {
+    "tpope/vim-fugitive",
+    event = "User InGitRepo",
+    config = function()
+      require("config.fugitive")
+    end,
+  },
 --
 --  -- Better git log display
 --  { "rbong/vim-flog", cmd = { "Flog" } },
@@ -248,13 +248,13 @@ local plugin_specs = {
 --    end,
 --  },
 --
---  -- Show git change (change, delete, add) signs in vim sign column
---  {
---    "lewis6991/gitsigns.nvim",
---    config = function()
---      require("config.gitsigns")
---    end,
---  },
+  -- Show git change (change, delete, add) signs in vim sign column
+  {
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require("config.gitsigns")
+    end,
+  },
 --
 --  {
 --    "sindrets/diffview.nvim",
