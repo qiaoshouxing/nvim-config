@@ -102,15 +102,15 @@ local plugin_specs = {
   -- A list of colorscheme plugin you may want to try. Find what suits you.
   { 'maxmx03/solarized.nvim', lazy = true },
 
---  {
---    "nvim-lualine/lualine.nvim",
---    event = "VeryLazy",
---    cond = firenvim_not_active,
---    config = function()
---      require("config.lualine")
---    end,
---  },
---
+  {
+    "nvim-lualine/lualine.nvim",
+    event = "VeryLazy",
+    cond = firenvim_not_active,
+    config = function()
+      require("config.lualine")
+    end,
+  },
+
 --  {
 --    "akinsho/bufferline.nvim",
 --    event = { "BufEnter" },
@@ -162,14 +162,14 @@ local plugin_specs = {
 --  -- Highlight URLs inside vim
 --  { "itchyny/vim-highlighturl", event = "VeryLazy" },
 --
---  -- notification plugin
---  {
---    "rcarriga/nvim-notify",
---    event = "VeryLazy",
---    config = function()
---      require("config.nvim-notify")
---    end,
---  },
+  -- notification plugin
+  {
+    "rcarriga/nvim-notify",
+    event = "VeryLazy",
+    config = function()
+      require("config.nvim-notify")
+    end,
+  },
 --
 --  -- For Windows and Mac, we can open an URL in the browser. For Linux, it may
 --  -- not be possible since we maybe in a server which disables GUI.
