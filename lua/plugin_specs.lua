@@ -314,6 +314,19 @@ local plugin_specs = {
     lazy = true,
   },
 
+  -- cmake tool
+  {
+    "nvim-lua/plenary.nvim",
+    lazy = true,
+  },
+  {
+    "Civitasv/cmake-tools.nvim",
+    opts = {},
+    config = function()
+      require("config.cmake-tools")
+    end,
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
 }
 
 ---@diagnostic disable-next-line: missing-fields
