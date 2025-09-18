@@ -266,14 +266,14 @@ local plugin_specs = {
 --    build = ":UpdateRemotePlugins",
 --  },
 --
---  -- showing keybindings
---  {
---    "folke/which-key.nvim",
---    event = "VeryLazy",
---    config = function()
---      require("config.which-key")
---    end,
---  },
+  -- showing keybindings
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("config.which-key")
+    end,
+  },
 --  {
 --    "folke/snacks.nvim",
 --    priority = 1000,
