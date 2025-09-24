@@ -35,22 +35,22 @@ let g:UltiSnipsSnippetDirectories=['UltiSnips', 'my_snippets']
 command! -nargs=0 StartVlime call jobstart(printf("sbcl --load %s/vlime/lisp/start-vlime.lisp", g:package_home))
 
 """"""""""""""""""""""""""" vista settings """"""""""""""""""""""""""""""""""
-let g:vista#renderer#icons = {
-      \ 'member': '',
-      \ }
+" let g:vista#renderer#icons = {
+"      \ 'member': '',
+"      \ }
 
 " Do not echo message on command line
-let g:vista_echo_cursor = 0
+"let g:vista_echo_cursor = 0
 " Stay in current window when vista window is opened
-let g:vista_stay_on_open = 0
+"let g:vista_stay_on_open = 0
 
-nnoremap <silent> <Space>t :<C-U>Vista!!<CR>
+"nnoremap <silent> <Space>t :<C-U>Vista!!<CR>
 
 """"""""""""""""""""""""vim-mundo settings"""""""""""""""""""""""
-let g:mundo_verbose_graph = 0
-let g:mundo_width = 80
-
-nnoremap <silent> <Space>u :MundoToggle<CR>
+"let g:mundo_verbose_graph = 0
+"let g:mundo_width = 80
+" 
+"nnoremap <silent> <Space>u :MundoToggle<CR>
 
 """"""""""""""""""""""""""""better-escape.vim settings"""""""""""""""""""""""""
 let g:better_escape_interval = 200

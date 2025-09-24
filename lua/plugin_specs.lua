@@ -327,6 +327,15 @@ local plugin_specs = {
     end,
     dependencies = { "nvim-lua/plenary.nvim" },
   },
+
+  -- terminal
+  {
+    'akinsho/toggleterm.nvim',
+    version = "*",
+    config = function ()
+        require("config.toggleterm")
+    end,
+  },
 }
 
 ---@diagnostic disable-next-line: missing-fields
