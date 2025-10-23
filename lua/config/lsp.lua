@@ -78,6 +78,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
       client.server_capabilities.hoverProvider = false
     end
 
+    -- support clangd switch source and header
+    if client.name == "clangd" then
+        map("n", "<space>s", "<Cmd>LspClangdSwitchSourceHeader<CR>", { desc = "switch source and header c/cpp file" })
+    end
+
     -- Uncomment code below to enable inlay hint from language server, some LSP server supports inlay hint,
     -- but disable this feature by default, so you may need to enable inlay hint in the LSP server config.
     -- vim.lsp.inlay_hint.enable(true, {buffer=bufnr})
