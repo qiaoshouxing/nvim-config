@@ -1,4 +1,10 @@
 require("fzf-lua").setup {
+  keymap = {
+    builtin = {
+      ["<C-d>"]       = "preview-down",
+      ["<C-u>"]       = "preview-up",
+    },
+  },
   winopts = {
     row = 0.5,
     height = 0.7,
