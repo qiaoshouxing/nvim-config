@@ -223,10 +223,10 @@ require("lualine").setup {
         end,
         color = { gui = "italic,bold" },
       },
-      {
-        get_git_ahead_behind_info,
-        color = { fg = "#E0C479" },
-      },
+      --{
+      --  get_git_ahead_behind_info,
+      --  color = { fg = "#E0C479" },
+      --},
       {
         "diff",
         source = diff,
