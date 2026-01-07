@@ -210,7 +210,7 @@ require("lualine").setup {
     disabled_filetypes = {},
     always_divide_middle = true,
     refresh = {
-      statusline = 1000,
+      statusline = 1500,
     },
   },
   sections = {
