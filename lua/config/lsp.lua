@@ -181,7 +181,9 @@ local enabled_lsp_servers = {
   html = "vscode-html-language-server",
   cssls = "vscode-css-language-server",
   eslint = "vscode-eslint-language-server",
-  yamlls = "yaml-language-server"
+  yamlls = "yaml-language-server",
+  vtsls = "vtsls",
+  vue_ls = "vue-language-server",
 }
 
 for server_name, lsp_executable in pairs(enabled_lsp_servers) do

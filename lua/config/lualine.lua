@@ -210,19 +210,11 @@ require("lualine").setup {
     disabled_filetypes = {},
     always_divide_middle = true,
     refresh = {
-      statusline = 500,
+      statusline = 1000,
     },
   },
   sections = {
     lualine_a = {
-      {
-        "filename",
-        symbols = {
-          readonly = "[🔒]",
-        },
-      },
-    },
-    lualine_b = {
       {
         "branch",
         fmt = function(name, _)
@@ -242,6 +234,14 @@ require("lualine").setup {
       {
         virtual_env,
         color = { fg = "black", bg = "#F1CA81" },
+      },
+    },
+    lualine_b = {
+      {
+        "filename",
+        symbols = {
+          readonly = "[🔒]",
+        },
       },
     },
     lualine_c = {
