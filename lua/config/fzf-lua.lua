@@ -12,6 +12,7 @@ require("fzf-lua").setup {
   files = {
     previewer = false,
   },
+  nbsp = '\xc2\xa0',
 }
 
 vim.keymap.set("n", "<leader>ff", "<cmd>FzfLua files<cr>", { desc = "Fuzzy find files" })
