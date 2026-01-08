@@ -6,6 +6,7 @@ keymap.set("n", "<leader>gc", "<cmd>Git commit<cr>", { desc = "Git: commit chang
 keymap.set("n", "<leader>gpl", "<cmd>Git pull<cr>", { desc = "Git: pull changes" })
 keymap.set("n", "<leader>gpu", "<cmd>15 split|term git push<cr>", { desc = "Git: push changes" })
 keymap.set("v", "<leader>gb", ":Git blame<cr>", { desc = "Git: blame selected line" })
+keymap.set("n", "<leader>gf", ":Git fetch ", { desc = "Git: prune branches" })
 
 -- convert git to Git in command line mode
 vim.fn["utils#Cabbrev"]("git", "Git")
@@ -23,5 +24,5 @@ end, {
   desc = "Git: create new branch",
 })
 
-keymap.set("n", "<leader>gf", ":Git fetch ", { desc = "Git: prune branches" })
 keymap.set("n", "<leader>gbd", ":Git branch -D ", { desc = "Git: delete branch" })
+keymap.set("n", "<leader>gbs", ":Git switch ", { desc = "Git: switch branch" })
