@@ -217,6 +217,32 @@ else
 fi
 
 #######################################################################
+#                           fzf install                            #
+#######################################################################
+FZF_SRC_NAME=$HOME/packages/fzf-0.67.0-linux_amd64.tar.gz
+FZF_DIR=$HOME/tools/fzf
+FZF_LINK="https://github.com/junegunn/fzf/releases/download/v0.67.0/fzf-0.67.0-linux_amd64.tar.gz"
+if [[ ! -f "$FZF_DIR/fzf" ]]; then
+    echo "Installing FZF"
+    if [[ ! -d "$FZF_DIR" ]]; then
+        mkdir -p "$FZF_DIR"
+    fi
+
+    if [[ ! -f $FZF_SRC_NAME ]]; then
+        echo "Downloading fzf"
+        wget "$NVIM_LINK" -O "$FZF_SRC_NAME"
+    fi
+    echo "Extracting fzf"
+    tar zxvf "$FZF_SRC_NAME" --strip-components 1 -C "$FZF_DIR"
+
+    if [[ "$ADD_TO_SYSTEM_PATH" = true ]] && [[ "$USE_BASH_SHELL" = true ]]; then
+        echo "export PATH=\"$FZF_DIR:\$PATH\"" >> "$HOME/.bash_profile"
+    fi
+else
+    echo "FZF is already installed. Skip installing it."
+fi
+
+#######################################################################
 #                                Nvim install                         #
 #######################################################################
 NVIM_DIR=$HOME/tools/nvim
