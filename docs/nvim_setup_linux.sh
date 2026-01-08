@@ -17,8 +17,8 @@ INSTALL_ANACONDA=false
 ADD_TO_SYSTEM_PATH=true
 
 # select which shell we are using
-USE_ZSH_SHELL=true
-USE_BASH_SHELL=false
+USE_ZSH_SHELL=false
+USE_BASH_SHELL=true
 
 if [[ ! -d "$HOME/packages/" ]]; then
     mkdir -p "$HOME/packages/"
@@ -67,24 +67,24 @@ else
 fi
 
 # Install some Python packages used by Nvim plugins.
-echo "Installing Python packages"
-declare -a PY_PACKAGES=("pynvim" 'python-lsp-server[all]' "vim-vint" "python-lsp-isort" "pylsp-mypy" "python-lsp-black")
-
-if [[ "$SYSTEM_PYTHON" = true ]]; then
-    echo "Using system Python to install $(PY_PACKAGES)"
-
-    # If we use system Python, we need to install these Python packages under
-    # user HOME, since we do not have permissions to install them under system
-    # directories.
-    for p in "${PY_PACKAGES[@]}"; do
-        pip install --user "$p"
-    done
-else
-    echo "Using custom Python to install $(PY_PACKAGES)"
-    for p in "${PY_PACKAGES[@]}"; do
-        "$CONDA_DIR/bin/pip" install "$p"
-    done
-fi
+#echo "Installing Python packages"
+#declare -a PY_PACKAGES=("pynvim" 'python-lsp-server[all]' "vim-vint" "python-lsp-isort" "pylsp-mypy" "python-lsp-black")
+#
+#if [[ "$SYSTEM_PYTHON" = true ]]; then
+#    echo "Using system Python to install $(PY_PACKAGES)"
+#
+#    # If we use system Python, we need to install these Python packages under
+#    # user HOME, since we do not have permissions to install them under system
+#    # directories.
+#    for p in "${PY_PACKAGES[@]}"; do
+#        pip install --user "$p"
+#    done
+#else
+#    echo "Using custom Python to install $(PY_PACKAGES)"
+#    for p in "${PY_PACKAGES[@]}"; do
+#        "$CONDA_DIR/bin/pip" install "$p"
+#    done
+#fi
 
 #######################################################################
 #                Install node and js-based language server            #
@@ -115,11 +115,12 @@ else
     NODE_DIR="$(realpath $(dirname $(which node))/..)"
 fi
 
-# Install vim-language-server
+# Install npm package for lsp
 "$NODE_DIR/bin/npm" install -g vim-language-server
-
-# Install bash-language-server
 "$NODE_DIR/bin/npm" install -g bash-language-server
+"$NODE_DIR/bin/npm" install -g pyright
+"$NODE_DIR/bin/npm" install -g vscode-langservers-extracted
+"$NODE_DIR/bin/npm" install -g vscode-html-languageservice
 
 #######################################################################
 #                         lua-language-server                         #
@@ -153,40 +154,40 @@ fi
 #######################################################################
 #                            Ripgrep part                             #
 #######################################################################
-RIPGREP_DIR=$HOME/tools/ripgrep
-RIPGREP_SRC_NAME=$HOME/packages/ripgrep.tar.gz
-RIPGREP_LINK="https://github.com/BurntSushi/ripgrep/releases/download/12.0.0/ripgrep-12.0.0-x86_64-unknown-linux-musl.tar.gz"
-if [[ -z "$(command -v rg)" ]] && [[ ! -f "$RIPGREP_DIR/rg" ]]; then
-    echo "Install ripgrep"
-    if [[ ! -f $RIPGREP_SRC_NAME ]]; then
-        echo "Downloading ripgrep and renaming"
-        wget $RIPGREP_LINK -O "$RIPGREP_SRC_NAME"
-    fi
-
-    if [[ ! -d "$RIPGREP_DIR" ]]; then
-        echo "Creating ripgrep directory under tools directory"
-        mkdir -p "$RIPGREP_DIR"
-        echo "Extracting to $HOME/tools/ripgrep directory"
-        tar zxvf "$RIPGREP_SRC_NAME" -C "$RIPGREP_DIR" --strip-components 1
-    fi
-
-    if [[ "$ADD_TO_SYSTEM_PATH" = true ]] && [[ "$USE_BASH_SHELL" = true ]]; then
-        echo "export PATH=\"$RIPGREP_DIR:\$PATH\"" >> "$HOME/.bash_profile"
-    fi
-
-    # set up manpath and zsh completion for ripgrep
-    mkdir -p "$HOME/tools/ripgrep/doc/man/man1"
-    mv "$HOME/tools/ripgrep/doc/rg.1" "$HOME/tools/ripgrep/doc/man/man1"
-
-    if [[ "$USE_BASH_SHELL" = true ]]; then
-        echo 'export MANPATH=$HOME/tools/ripgrep/doc/man:$MANPATH' >> "$HOME/.bash_profile"
-    else
-        echo 'export MANPATH=$HOME/tools/ripgrep/doc/man:$MANPATH' >> "$HOME/.zshrc"
-        echo 'export FPATH=$HOME/tools/ripgrep/complete:$FPATH' >> "$HOME/.zshrc"
-    fi
-else
-    echo "ripgrep is already installed. Skip installing it."
-fi
+#RIPGREP_DIR=$HOME/tools/ripgrep
+#RIPGREP_SRC_NAME=$HOME/packages/ripgrep.tar.gz
+#RIPGREP_LINK="https://github.com/BurntSushi/ripgrep/releases/download/12.0.0/ripgrep-12.0.0-x86_64-unknown-linux-musl.tar.gz"
+#if [[ -z "$(command -v rg)" ]] && [[ ! -f "$RIPGREP_DIR/rg" ]]; then
+#    echo "Install ripgrep"
+#    if [[ ! -f $RIPGREP_SRC_NAME ]]; then
+#        echo "Downloading ripgrep and renaming"
+#        wget $RIPGREP_LINK -O "$RIPGREP_SRC_NAME"
+#    fi
+#
+#    if [[ ! -d "$RIPGREP_DIR" ]]; then
+#        echo "Creating ripgrep directory under tools directory"
+#        mkdir -p "$RIPGREP_DIR"
+#        echo "Extracting to $HOME/tools/ripgrep directory"
+#        tar zxvf "$RIPGREP_SRC_NAME" -C "$RIPGREP_DIR" --strip-components 1
+#    fi
+#
+#    if [[ "$ADD_TO_SYSTEM_PATH" = true ]] && [[ "$USE_BASH_SHELL" = true ]]; then
+#        echo "export PATH=\"$RIPGREP_DIR:\$PATH\"" >> "$HOME/.bash_profile"
+#    fi
+#
+#    # set up manpath and zsh completion for ripgrep
+#    mkdir -p "$HOME/tools/ripgrep/doc/man/man1"
+#    mv "$HOME/tools/ripgrep/doc/rg.1" "$HOME/tools/ripgrep/doc/man/man1"
+#
+#    if [[ "$USE_BASH_SHELL" = true ]]; then
+#        echo 'export MANPATH=$HOME/tools/ripgrep/doc/man:$MANPATH' >> "$HOME/.bash_profile"
+#    else
+#        echo 'export MANPATH=$HOME/tools/ripgrep/doc/man:$MANPATH' >> "$HOME/.zshrc"
+#        echo 'export FPATH=$HOME/tools/ripgrep/complete:$FPATH' >> "$HOME/.zshrc"
+#    fi
+#else
+#    echo "ripgrep is already installed. Skip installing it."
+#fi
 
 #######################################################################
 #                            Ctags install                            #
@@ -221,7 +222,7 @@ fi
 NVIM_DIR=$HOME/tools/nvim
 NVIM_SRC_NAME=$HOME/packages/nvim-linux64.tar.gz
 NVIM_CONFIG_DIR=$HOME/.config/nvim
-NVIM_LINK="https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz"
+NVIM_LINK="https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-x86_64.tar.gz"
 if [[ ! -f "$NVIM_DIR/bin/nvim" ]]; then
     echo "Installing Nvim"
     echo "Creating nvim directory under tools directory"
@@ -250,7 +251,7 @@ if [[ -d "$NVIM_CONFIG_DIR" ]]; then
     mv "$NVIM_CONFIG_DIR" "$NVIM_CONFIG_DIR.backup"
 fi
 
-git clone --depth=1 https://github.com/jdhao/nvim-config.git "$NVIM_CONFIG_DIR"
+git clone -b develop --depth=1 https://github.com/qiaoshouxing/nvim-config.git "$NVIM_CONFIG_DIR"
 
 echo "Installing nvim plugins, please wait"
 "$NVIM_DIR/bin/nvim" -c "autocmd User LazyInstall quitall"  -c "lua require('lazy').install()"
