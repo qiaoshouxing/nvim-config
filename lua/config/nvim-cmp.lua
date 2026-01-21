@@ -5,7 +5,7 @@ local cmp = require("cmp")
 require("cmp_nvim_lsp")
 require("cmp_path")
 require("cmp_buffer")
-require("cmp_omni")
+--require("cmp_omni")
 require("cmp_cmdline")
 require("cmp_nvim_ultisnips")
 
@@ -65,7 +65,7 @@ cmp.setup {
 
 cmp.setup.filetype("tex", {
   sources = {
-    { name = "omni" },
+    --{ name = "omni" },
     { name = "ultisnips" }, -- For ultisnips user.
     { name = "buffer", keyword_length = 2 }, -- for buffer word completion
     { name = "path" }, -- for path completion

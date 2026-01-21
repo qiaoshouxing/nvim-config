@@ -63,14 +63,14 @@ vim.api.nvim_create_autocmd("LspAttach", {
     map("n", "K", function()
       vim.lsp.buf.hover { border = "single", max_height = 25, max_width = 120 }
     end)
-    map("n", "<C-k>", vim.lsp.buf.signature_help)
-    map("n", "<space>rn", vim.lsp.buf.rename, { desc = "varialbe rename" })
-    map("n", "<space>ca", vim.lsp.buf.code_action, { desc = "LSP code action" })
-    map("n", "<space>wa", vim.lsp.buf.add_workspace_folder, { desc = "add workspace folder" })
-    map("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, { desc = "remove workspace folder" })
-    map("n", "<space>wl", function()
-      vim.print(vim.lsp.buf.list_workspace_folders())
-    end, { desc = "list workspace folder" })
+    --map("n", "<C-k>", vim.lsp.buf.signature_help)
+    --map("n", "<space>rn", vim.lsp.buf.rename, { desc = "varialbe rename" })
+    --map("n", "<space>ca", vim.lsp.buf.code_action, { desc = "LSP code action" })
+    --map("n", "<space>wa", vim.lsp.buf.add_workspace_folder, { desc = "add workspace folder" })
+    --map("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, { desc = "remove workspace folder" })
+    --map("n", "<space>wl", function()
+    --  vim.print(vim.lsp.buf.list_workspace_folders())
+    --end, { desc = "list workspace folder" })
 
     -- Set some key bindings conditional on server capabilities
     -- Disable ruff hover feature in favor of Pyright

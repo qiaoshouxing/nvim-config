@@ -1,3 +1,5 @@
+local keymap = vim.keymap
+
 require("bufferline").setup {
   options = {
     numbers = "none",
@@ -45,10 +47,29 @@ require("bufferline").setup {
   },
 }
 
-vim.keymap.set("n", "<space>bp", "<cmd>BufferLinePick<CR>", {
+keymap.set("n", "<space>b", "<cmd>BufferLinePick<CR>", {
   desc = "pick a buffer",
 })
 
-vim.keymap.set("n", "<space>bn", "<cmd>Buffer<CR>", {
-  desc = "pick a buffer",
+--vim.keymap.set("n", "<space>bl", "<cmd>BufferLineCloseLeft<CR>", {
+--  desc = "close left buffer",
+--})
+--vim.keymap.set("n", "<space>br", "<cmd>BufferLineCloseRight<CR>", {
+--  desc = "close right buffer",
+--})
+--vim.keymap.set("n", "<space>bo", "<cmd>BufferLineCloseOthers<CR>", {
+--  desc = "close others buffer",
+--})
+
+keymap.set("n", [[\f]], "<cmd>BufferLineCloseLeft<CR>", {
+  silent = true,
+  desc = "close left buffer",
+})
+keymap.set("n", [[\b]], "<cmd>BufferLineCloseRight<CR>", {
+  silent = true,
+  desc = "close right buffer",
+})
+keymap.set("n", [[\o]], "<cmd>BufferLineCloseOthers<CR>", {
+  silent = true,
+  desc = "close other buffer",
 })
