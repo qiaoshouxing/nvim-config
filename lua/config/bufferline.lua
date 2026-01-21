@@ -61,11 +61,11 @@ keymap.set("n", "<space>b", "<cmd>BufferLinePick<CR>", {
 --  desc = "close others buffer",
 --})
 
-keymap.set("n", [[\f]], "<cmd>BufferLineCloseLeft<CR>", {
+keymap.set("n", [[\l]], "<cmd>BufferLineCloseLeft<CR>", {
   silent = true,
   desc = "close left buffer",
 })
-keymap.set("n", [[\b]], "<cmd>BufferLineCloseRight<CR>", {
+keymap.set("n", [[\r]], "<cmd>BufferLineCloseRight<CR>", {
   silent = true,
   desc = "close right buffer",
 })
