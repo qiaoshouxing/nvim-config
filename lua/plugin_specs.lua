@@ -205,6 +205,9 @@ local plugin_specs = {
       "honza/vim-snippets",
     },
     event = "InsertEnter",
+    config = function()
+        vim.g.UltiSnipsSnippetDirectories = {'UltiSnips', 'my_snippets'}
+    end,
   },
 --
 --  -- Comment plugin
