@@ -80,7 +80,8 @@ nvim_tree.setup {
   },
   git = {
     enable = true,
-    ignore = true,
+    ignore = false,
+    timeout = 400,
   },
   actions = {
     use_system_clipboard = true,
