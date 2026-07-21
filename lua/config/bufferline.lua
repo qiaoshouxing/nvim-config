@@ -47,7 +47,7 @@ require("bufferline").setup {
   },
 }
 
-keymap.set("n", "<space>b", "<cmd>BufferLinePick<CR>", {
+keymap.set("n", [[\p]], "<cmd>BufferLinePick<CR>", {
   desc = "pick a buffer",
 })
 
@@ -61,11 +61,11 @@ keymap.set("n", "<space>b", "<cmd>BufferLinePick<CR>", {
 --  desc = "close others buffer",
 --})
 
-keymap.set("n", [[\l]], "<cmd>BufferLineCloseLeft<CR>", {
+keymap.set("n", [[\h]], "<cmd>BufferLineCloseLeft<CR>", {
   silent = true,
   desc = "close left buffer",
 })
-keymap.set("n", [[\r]], "<cmd>BufferLineCloseRight<CR>", {
+keymap.set("n", [[\l]], "<cmd>BufferLineCloseRight<CR>", {
   silent = true,
   desc = "close right buffer",
 })

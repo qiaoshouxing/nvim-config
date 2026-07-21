@@ -209,6 +209,12 @@ local plugin_specs = {
         vim.g.UltiSnipsSnippetDirectories = {'UltiSnips', 'my_snippets'}
     end,
   },
+  {
+      "danymat/neogen",
+      config = true,
+      -- Uncomment next line if you want to follow only stable versions
+      -- version = "*" 
+  },
 --
 --  -- Comment plugin
 --  { "tpope/vim-commentary", event = "VeryLazy" },
