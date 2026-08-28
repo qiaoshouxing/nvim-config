@@ -46,10 +46,10 @@ cmake_tools.setup{
     default_opts = { -- a list of default and possible values for executors
       quickfix = {
         show = "always", -- "always", "only_on_error"
-        position = "belowright", -- "vertical", "horizontal", "leftabove", "aboveleft", "rightbelow", "belowright", "topleft", "botright", use `:h vertical` for example to see help on them
+        position = "botright", -- "vertical", "horizontal", "leftabove", "aboveleft", "rightbelow", "belowright", "topleft", "botright", use `:h vertical` for example to see help on them
         size = 10,
         encoding = "utf-8", -- if encoding is not "utf-8", it will be converted to "utf-8" using `vim.fn.iconv`
-        auto_close_when_success = false, -- typically, you can use it with the "always" option; it will auto-close the quickfix buffer if the execution is successful.
+        auto_close_when_success = true, -- typically, you can use it with the "always" option; it will auto-close the quickfix buffer if the execution is successful.
       },
       toggleterm = {
         direction = "float", -- 'vertical' | 'horizontal' | 'tab' | 'float'
@@ -145,6 +145,6 @@ cmake_tools.setup{
     spinner = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" }, -- icons used for progress display
     refresh_rate_ms = 100, -- how often to iterate icons
   },
-  cmake_virtual_text_support = true, -- Show the target related to current file using virtual text (at right corner)
+  cmake_virtual_text_support = false, -- Show the target related to current file using virtual text (at right corner)
   cmake_use_scratch_buffer = false, -- A buffer that shows what cmake-tools has done
 }

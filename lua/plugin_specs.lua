@@ -216,8 +216,8 @@ local plugin_specs = {
       -- version = "*" 
   },
 --
---  -- Comment plugin
---  { "tpope/vim-commentary", event = "VeryLazy" },
+-- Comment plugin
+{ "tpope/vim-commentary", event = "VeryLazy" },
 --
 --  -- Multiple cursor plugin like Sublime Text?
 --  -- 'mg979/vim-visual-multi'
@@ -344,6 +344,25 @@ local plugin_specs = {
     config = function ()
         require("config.toggleterm")
     end,
+  },
+
+  -- show unicode
+  {
+    "chrisbra/unicode.vim",
+    init = function()
+      vim.cmd([[
+        nmap ga <Plug>(UnicodeGA)
+      ]])
+    end,
+    event = "VeryLazy",
+  },
+
+  -- align codes
+  { "junegunn/vim-easy-align",
+    config = function ()
+        require("config.vim-easy-align")
+    end,
+    event = "VeryLazy",
   },
 }
 
